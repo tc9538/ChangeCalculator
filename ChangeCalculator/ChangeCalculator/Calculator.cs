@@ -19,6 +19,7 @@ namespace ChangeCalculator
             //handle dollar bills
             int fiveDollarBillCount = 0;
             int tenDollarBillCount = 0;
+            int twentyDollarCount = 0;
             int fiftyDollarBillCount = 0;
             int oneHundredBillCount = 0;
 
@@ -33,16 +34,25 @@ namespace ChangeCalculator
 
                 if (currentDollarAmount > 0)
                 {
-                    tenDollarBillCount = (int)(currentDollarAmount / 10);
-                    currentDollarAmount = (int)(currentDollarAmount % 10);
+                   
+                      twentyDollarCount = (int)(currentDollarAmount / 20);
+                      currentDollarAmount = (int)(currentDollarAmount % 20);
+                       
+                      if(currentDollarAmount>0)
+                      {
+                            tenDollarBillCount = (int)(currentDollarAmount / 10);
+                            currentDollarAmount = (int)(currentDollarAmount % 10);
 
-                    if (currentDollarAmount > 0)
-                    {
-                        fiveDollarBillCount = (int)(currentDollarAmount / 5);
-                        currentDollarAmount = (int)(currentDollarAmount % 5);
-                    }
-                }
-                Console.WriteLine("(" + oneHundredBillCount + ") 100 dollar bills (" + fiftyDollarBillCount + ") 50 dollar bills (" + tenDollarBillCount + ") ten dollar bills (" + fiveDollarBillCount + ") five dollar bills (" + currentDollarAmount + ") one dollar bills ");
+                            if (currentDollarAmount > 0)
+                            {
+                                fiveDollarBillCount = (int)(currentDollarAmount / 5);
+                                currentDollarAmount = (int)(currentDollarAmount % 5);
+                            }
+                      }
+
+                 }
+                    
+                Console.WriteLine("(" + oneHundredBillCount + ") 100 dollar bills (" + fiftyDollarBillCount + ") 50 dollar bills (" + twentyDollarCount+ " ) 20 dollar bills " + "( "+ tenDollarBillCount + ") 10 dollar bills (" + fiveDollarBillCount + ") 5 dollar bills (" + currentDollarAmount + ") 1 dollar bills ");
 
             }
 
