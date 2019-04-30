@@ -14,7 +14,7 @@ namespace ChangeCalculator
 
             Console.WriteLine("Enter the amount of money that you would like to convert into changes:");
             //var d = Convert.ToDouble(Console.ReadLine());
-            double d;
+            double d=0.00;
             Boolean result = Double.TryParse(Console.ReadLine(), out d);
 
             while (d!=-1)
@@ -22,24 +22,26 @@ namespace ChangeCalculator
                 if (d < 0 || d == 0)
                 {
                     Console.WriteLine("Enter an amount larger than 0 or does not contain alphabetical characters:");
-                    d = Convert.ToDouble(Console.ReadLine());
+                    //d = Convert.ToDouble(Console.ReadLine());
+                    Boolean resultA = Double.TryParse(Console.ReadLine(), out d);
+                    
                 }
                 else
                 {
+                    
+                    Console.WriteLine("*************************************************************************************");
+                    Console.WriteLine("Enter another amount of money to convert into changes or enter -1 to end the program");
+                    Boolean resultB = Double.TryParse(Console.ReadLine(), out d);
+            
+                }
+
+                if(d !=0 && d>0)
+                {
                     Calculator c = new Calculator(d);
                     c.changeCalculator();
-                    Console.WriteLine("*************************************************************************************");
-                    Console.WriteLine("Enter another amount of money to convert into changes or enter Quit to end the program");
-                    String st = Console.ReadLine();
-                    if (st == "Quit")
-                    {
-                        d = -1;
-                    }
-                    else
-                    {
-                        d = Convert.ToDouble(st);
-                    }
                 }
+
+              
 
             }
 
