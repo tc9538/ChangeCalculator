@@ -25,8 +25,6 @@ namespace ChangeCalculator
 
             double dollarAmount = Math.Truncate(amount);
            
-
-          
             oneHundredBillCount = (int)(dollarAmount / 100);
             int currentDollarAmount = (int)(dollarAmount % 100);
 
@@ -55,8 +53,6 @@ namespace ChangeCalculator
 
                     }
 
-                    Console.WriteLine("(" + oneHundredBillCount + ") 100 dollar bills (" + fiftyDollarBillCount + ") 50 dollar bills (" + twentyDollarCount + " ) 20 dollar bills " + "( " + tenDollarBillCount + ") 10 dollar bills (" + fiveDollarBillCount + ") 5 dollar bills (" + currentDollarAmount + ") 1 dollar bills ");
-
                 }
 
                 //handle decimal parts of amount
@@ -81,8 +77,8 @@ namespace ChangeCalculator
                     }
 
                 }
-
-                Console.WriteLine(quarterCount + " quarters " + dimeCount + " dimes " + nickleCount + " nickles " + current + " cents.");
+            Console.WriteLine("(" + oneHundredBillCount + ") 100 dollar bills (" + fiftyDollarBillCount + ") 50 dollar bills (" + twentyDollarCount + ") 20 dollar bills " + "(" + tenDollarBillCount + ") 10 dollar bills (" + fiveDollarBillCount + ") 5 dollar bills (" + currentDollarAmount + ") 1 dollar bills ");
+            Console.WriteLine(quarterCount + " quarters " + dimeCount + " dimes " + nickleCount + " nickles " + current + " cents.");
         }
     }
 }
